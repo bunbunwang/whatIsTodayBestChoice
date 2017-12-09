@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Kohinoor.ttc">
+            <string>KohinoorDevanagari-Regular</string>
+        </array>
         <array key="PingFang.ttc">
             <string>PingFangTC-Light</string>
             <string>PingFangTC-Regular</string>
@@ -17,16 +20,20 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Today Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="whatIsTodayBestChoice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="todayController" customModule="whatIsTodayBestChoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sakuraBackground" translatesAutoresizingMaskIntoConstraints="NO" id="PXb-62-zcg">
+                                <rect key="frame" x="-8" y="64" width="415" height="678"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8In-CO-jes">
-                                <rect key="frame" x="35" y="38" width="218" height="243"/>
+                                <rect key="frame" x="35" y="73" width="218" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">今日
 
@@ -38,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-KE-gls">
-                                <rect key="frame" x="27" y="29" width="218" height="243"/>
+                                <rect key="frame" x="27" y="64" width="218" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">今日
 
@@ -49,57 +56,60 @@
                                 <color key="textColor" red="0.99527662992477417" green="0.99272102117538452" blue="0.99592417478561401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日溫度" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8a-6l-CwS">
-                                <rect key="frame" x="245" y="246" width="92" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="溫度剛剛好？" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8a-6l-CwS">
+                                <rect key="frame" x="220" y="246" width="139" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="23"/>
-                                <color key="textColor" red="0.088287822902202606" green="0.2397732138633728" blue="0.19342458248138428" alpha="0.74756528253424659" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-HE-ZEa">
-                                <rect key="frame" x="327" y="435" width="32" height="144"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-HE-ZEa">
+                                <rect key="frame" x="225" y="472" width="112" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">宅
+                                <string key="text">今天就要
+宅
 充
-電</string>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="23"/>
-                                <color key="textColor" red="0.088287822902202606" green="0.2397732138633728" blue="0.19342458248138428" alpha="0.74756528249999998" colorSpace="custom" customColorSpace="sRGB"/>
+電
+啊</string>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-Oa-LkY">
-                                <rect key="frame" x="327" y="435" width="32" height="144"/>
+                                <rect key="frame" x="273" y="472" width="32" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">走
 吧</string>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="23"/>
-                                <color key="textColor" red="0.088287822902202606" green="0.2397732138633728" blue="0.19342458248138428" alpha="0.74756528249999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="25"/>
+                                <color key="textColor" red="0.99527662992477417" green="0.99272102117538452" blue="0.99592417478561401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="老天爺今天心情怎樣" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-JD-wnl">
-                                <rect key="frame" x="128" y="338" width="209" height="49"/>
+                                <rect key="frame" x="150" y="315" width="209" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="23"/>
-                                <color key="textColor" red="0.088287822902202606" green="0.2397732138633728" blue="0.19342458248138428" alpha="0.74756528249999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="攝氏度" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2W-XH-K2o">
-                                <rect key="frame" x="270" y="286" width="67" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yes or no" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2W-XH-K2o">
+                                <rect key="frame" x="273" y="286" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99265426397323608" green="0.99590712785720825" blue="0.99583667516708374" alpha="0.71417487157534243" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.092641107738018036" green="0.16628545522689819" blue="0.42471432685852051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="宅充電" translatesAutoresizingMaskIntoConstraints="NO" id="nZS-KO-Pdi">
-                                <rect key="frame" x="27" y="508" width="240" height="128"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="nZS-KO-Pdi">
+                                <rect key="frame" x="25" y="548" width="267" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="晃晃" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-Iy-qeL">
-                                <rect key="frame" x="59" y="443" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-7Z-YGo">
-                                <rect key="frame" x="59" y="381" width="278" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-7Z-YGo">
+                                <rect key="frame" x="59" y="359" width="300" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.86199241876602173" green="0.89949023723602295" blue="0.90432339906692505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
@@ -108,18 +118,48 @@
                                 </segments>
                                 <color key="tintColor" red="0.089066721498966217" green="0.26723670959472656" blue="0.47489458322525024" alpha="0.83585723458904104" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7U-Ee-XCC">
+                                <rect key="frame" x="252" y="406" width="85" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.48432213070000002" green="0.75722885129999995" blue="0.82246291640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="29"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" red="0.64483010768890381" green="0.17905250191688538" blue="0.1174871101975441" alpha="0.7012253852739726" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2J-5t-bgF"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yes" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-Iy-qeL">
+                                <rect key="frame" x="-8" y="487" width="323" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.52766358852386475" green="0.66328108310699463" blue="0.6892051100730896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="noImageView" destination="nZS-KO-Pdi" id="ogu-Hk-dVD"/>
+                        <outlet property="noLabel" destination="za4-HE-ZEa" id="me0-77-dRS"/>
+                        <outlet property="rainOrSunSegmented" destination="Usc-7Z-YGo" id="heI-Oj-X1P"/>
+                        <outlet property="temperTextField" destination="a2W-XH-K2o" id="bBw-A8-M7O"/>
+                        <outlet property="yesImageView" destination="8bT-Iy-qeL" id="kIg-pr-Hp8"/>
+                        <outlet property="yesLabel" destination="qCX-Oa-LkY" id="J4e-pQ-IF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="142" y="125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="宅充電" width="300" height="300"/>
-        <image name="晃晃" width="278" height="225"/>
+        <image name="no" width="300" height="300"/>
+        <image name="sakuraBackground" width="640" height="427"/>
+        <image name="yes" width="278" height="225"/>
     </resources>
 </document>
